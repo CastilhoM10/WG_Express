@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>WG Express | Logística de Alta Performance</title>
+    <meta name="description" content="Especialistas em coletas, entregas, serviços bancários e malotes. Atuação em SP e todo o Brasil.">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src https://cdnjs.cloudflare.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Sidebar (Desktop) / Header Topo (Mobile) -->
+    <aside class="side-header">
+        <div class="brand-area">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <span>WG Express</span>
+            </a>
+            
+            <!-- Botão Hamburguer Modernizado -->
+            <button class="mobile-menu-btn" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li style="--i:1;"><a href="#inicio" class="nav-link"><i class="fa-solid fa-house"></i> <span>Início</span></a></li>
+                <li style="--i:2;"><a href="#servicos" class="nav-link"><i class="fa-solid fa-box-open"></i> <span>Serviços</span></a></li>
+                <li style="--i:3;"><a href="#vantagens" class="nav-link"><i class="fa-solid fa-star"></i> <span>Vantagens</span></a></li>
+                <li style="--i:4;"><a href="#contato" class="nav-link"><i class="fa-solid fa-envelope"></i> <span>Contato</span></a></li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sidebar">
+                    <i class="fa-brands fa-whatsapp"></i> Orçamento Rápido
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        
+        <!-- Hero Section (Fundo Escuro) -->
+        <section id="inicio" class="hero section-bg-dark">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content animate-on-scroll">
+                <div class="badge-hero">Logística Inteligente e Conectada</div>
+                <h1>Descomplique a <br><span class="text-primary">logística</span> da sua empresa.</h1>
+                <p>Nós assumimos a complexidade. Coletas, entregas e serviços de malotes com roteirização avançada em São Paulo e rotas nacionais.</p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primary">Fale com um Especialista</a>
+                    <a href="#vantagens" class="btn btn-outline-light">Conheça nossas Vantagens</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section (Fundo Âmbar) -->
+        <section class="stats-section section-bg-accent">
+            <div class="container grid-stats">
+                <div class="stat-item animate-on-scroll">
+                    <h3 class="counter" data-target="99">0</h3><span>%</span>
+                    <p>Entregas no Prazo</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3 class="counter" data-target="1500">0</h3><span>+</span>
+                    <p>Remessas Concluídas</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3 class="counter" data-target="30">0</h3>
+                    <p>Cidades Cobertas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Section (Fundo Cinza Claro) -->
+        <section id="servicos" class="servicos section-padding section-bg-light">
+            <div class="container">
+                <div class="section-title text-center animate-on-scroll">
+                    <span class="subtitle-tag">Nosso Portfólio</span>
+                    <h2>Soluções Integradas</h2>
+                </div>
+                <div class="grid-cards">
+                    <!-- Cards com classe específica para animação mobile -->
+                    <div class="card card-anim">
+                        <div class="card-icon"><i class="fa-regular fa-envelope"></i></div>
+                        <h3>Correios</h3>
+                        <p>Gestão completa de postagens nas agências. Economize horas de trabalho da sua equipe interna.</p>
+                    </div>
+                    <div class="card card-anim">
+                        <div class="card-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3>Serviços Bancários</h3>
+                        <p>Pagamentos e trâmites financeiros executados com absoluta discrição e protocolos de segurança.</p>
+                    </div>
+                    <div class="card card-anim">
+                        <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3>Gestão de Malotes</h3>
+                        <p>Transporte roteirizado de documentos sensíveis entre matriz, filiais e parceiros.</p>
+                    </div>
+                    <div class="card card-anim">
+                        <div class="card-icon"><i class="fa-solid fa-dolly"></i></div>
+                        <h3>Coletas Agendadas</h3>
+                        <p>Retirada de mercadorias na sua porta com veículos dimensionados para sua carga.</p>
+                    </div>
+                    <div class="card card-anim">
+                        <div class="card-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>Entregas Express</h3>
+                        <p>Logística de última milha para garantir que seu produto chegue intacto ao cliente final.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vantagens Section (Fundo Branco Puro - Expandida) -->
+        <section id="vantagens" class="vantagens section-padding section-bg-white">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <span class="subtitle-tag">Diferenciais</span>
+                    <h2>A estrutura que o seu negócio exige</h2>
+                    <p class="section-desc">Entenda por que empresas de todos os tamanhos confiam a sua operação logística à WG Express.</p>
+                </div>
+                
+                <!-- Bento Grid Layout -->
+                <div class="bento-grid">
+                    <div class="bento-box bento-large animate-on-scroll">
+                        <div class="bento-content">
+                            <i class="fa-solid fa-location-crosshairs text-primary bento-icon"></i>
+                            <h3>Tecnologia de Rastreamento</h3>
+                            <p>Controle total da sua operação. Acompanhe cada etapa da sua encomenda com nosso sistema atualizado em tempo real. Informação rápida e transparente para você e seu cliente final.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bento-box animate-on-scroll">
+                        <div class="bento-content">
+                            <i class="fa-solid fa-truck text-accent bento-icon"></i>
+                            <h3>Frota Diversificada</h3>
+                            <p>De motos para entregas ultrarrápidas a furgões para cargas volumosas. Veículos revisados e prontos para rodar.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bento-box animate-on-scroll">
+                        <div class="bento-content">
+                            <i class="fa-solid fa-shield-cat text-primary bento-icon"></i>
+                            <h3>Carga Segurada</h3>
+                            <p>Não corra riscos. Toda operação da WG Express possui apólices rigorosas para garantir 100% do valor do seu material.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-box bento-wide animate-on-scroll">
+                        <div class="bento-content">
+                            <div class="flex-align">
+                                <i class="fa-solid fa-users-gear text-accent bento-icon"></i>
+                                <div>
+                                    <h3>Suporte Humano Dedicado</h3>
+                                    <p>Nada de robôs confusos quando você mais precisa. Designamos um gerente de contas real para acompanhar as demandas do seu CNPJ, resolvendo gargalos com agilidade.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato (Fundo Escuro) -->
+        <section id="contato" class="contato section-padding section-bg-dark">
+            <div class="container animate-on-scroll">
+                <div class="contato-wrapper">
+                    <div class="contato-text">
+                        <span class="subtitle-tag tag-light">Vamos Conversar</span>
+                        <h2>Agende uma avaliação logística gratuita.</h2>
+                        <p>Deixe nosso time analisar sua demanda atual e propor uma rota mais rápida e econômica.</p>
+                        
+                        <div class="contact-methods">
+                            <a href="https://wa.me/5511999999999" class="method-card">
+                                <i class="fa-brands fa-whatsapp text-primary"></i>
+                                <div>
+                                    <h5>WhatsApp</h5>
+                                    <span>(11) 99999-9999</span>
+                                </div>
+                            </a>
+                            <a href="mailto:contato@wgexpress.com.br" class="method-card">
+                                <i class="fa-regular fa-envelope text-accent"></i>
+                                <div>
+                                    <h5>E-mail</h5>
+                                    <span>contato@wgexpress.com.br</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form id="contactForm" class="modern-form">
+                        <div class="form-group">
+                            <input type="text" id="nome" required maxlength="100" placeholder="Nome Completo / Empresa">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required maxlength="150" placeholder="E-mail Profissional">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mensagem" required maxlength="500" rows="5" placeholder="Volume estimado, cidades, necessidades..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent btn-block">
+                            Solicitar Proposta <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer section-bg-dark">
+            <div class="container footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>WG Express</h3>
+                </div>
+                <p>&copy; <span id="currentYear"></span> WG Express. Desenvolvido com segurança.</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
