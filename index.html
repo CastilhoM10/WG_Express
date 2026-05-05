@@ -27,9 +27,9 @@
     <aside class="side-header">
         <div class="brand-area">
             <a href="#" class="logo">
-                <div class="logo-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <span>WG Express</span>
-            </a>
+    <!-- Substitua "logo.jpg" pelo nome exato do arquivo da sua imagem -->
+    <img src="img/logo_footer.png" alt="Logo WG Express" class="custom-logo">
+</a>
             
             <!-- Botão Hamburguer Modernizado -->
             <button class="mobile-menu-btn" aria-label="Abrir menu">
@@ -44,6 +44,7 @@
                 <li style="--i:1;"><a href="#inicio" class="nav-link"><i class="fa-solid fa-house"></i> <span>Início</span></a></li>
                 <li style="--i:2;"><a href="#servicos" class="nav-link"><i class="fa-solid fa-box-open"></i> <span>Serviços</span></a></li>
                 <li style="--i:3;"><a href="#vantagens" class="nav-link"><i class="fa-solid fa-star"></i> <span>Vantagens</span></a></li>
+                <li style="--i:3;"><a href="#frota" class="nav-link"><i class="fa-solid fa-truck-arrow-right"></i> <span>Veículos</span></a></li>
                 <li style="--i:4;"><a href="#contato" class="nav-link"><i class="fa-solid fa-envelope"></i> <span>Contato</span></a></li>
             </ul>
             
@@ -178,6 +179,51 @@
             </div>
         </section>
 
+        <!-- Seção de Frota (Fundo Cinza Claro para alternar) -->
+<section id="frota" class="frota section-padding section-bg-light">
+    <div class="container">
+        <div class="section-title text-center animate-on-scroll">
+            <span class="subtitle-tag">Nossa Estrutura</span>
+            <h2>Veículos Prontos para o <span class="text-primary">Desafio</span></h2>
+        </div>
+
+        <div class="grid-frota">
+            <!-- Veículo 1 -->
+            <div class="veiculo-card animate-on-scroll">
+                <div class="veiculo-img">
+                    <img src="img/moto.jpg" alt="Moto WG Express">
+                    <div class="veiculo-badge">Express</div>
+                </div>
+                <div class="veiculo-info">
+                    <h3>Moto Express</h3>
+                    <p>Ideal para documentos, malotes e pequenas encomendas. Agilidade máxima no trânsito urbano.</p>
+                    <ul class="veiculo-specs">
+                        <li><i class="fa-solid fa-bolt"></i> Coleta em até 40 min</li>
+                        <li><i class="fa-solid fa-box"></i> Até 15kg</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Veículo 2 -->
+            <div class="veiculo-card animate-on-scroll">
+                <div class="veiculo-img">
+                    <img src="img/Fiorino.jpeg" alt="Fiorino WG Express">
+                    <div class="veiculo-badge">Carga Leve</div>
+                </div>
+                <div class="veiculo-info">
+                    <h3>Utilitário (Fiorino)</h3>
+                    <p>Transporte seguro para volumes maiores, caixas e mercadorias que exigem proteção contra clima.</p>
+                    <ul class="veiculo-specs">
+                        <li><i class="fa-solid fa-weight-hanging"></i> Até 650kg</li>
+                        <li><i class="fa-solid fa-shield"></i> Compartimento Selado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
         <!-- Contato (Fundo Escuro) -->
         <section id="contato" class="contato section-padding section-bg-dark">
             <div class="container animate-on-scroll">
@@ -228,10 +274,9 @@
         <footer class="footer section-bg-dark">
             <div class="container footer-content">
                 <div class="footer-logo">
-                    <div class="logo-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                    <h3>WG Express</h3>
-                </div>
-                <p>&copy; <span id="currentYear"></span> WG Express. Desenvolvido com segurança.</p>
+    <img src="img/logo_footer.png" alt="Logo WG Express" class="custom-logo-footer">
+</div>
+                <p style="text-align: center;">&copy; <span id="currentYear"></span> WG Express. Desenvolvido por CastilhoSolutions</p>
             </div>
         </footer>
     </div>

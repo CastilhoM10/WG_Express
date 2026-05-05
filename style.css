@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 /* =========================================
    VARIÁVEIS E CONFIGURAÇÕES V4.0
 ========================================= */
@@ -25,7 +28,7 @@
 html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
 body {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Exo 2', sans-serif;
     color: var(--text-main);
     line-height: 1.6;
     background-color: var(--dark-bg); 
@@ -35,10 +38,14 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 /* Tipografia */
-h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
+h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.5; text-transform: tight;}
 .text-primary { color: var(--primary-color); }
 .text-accent { color: var(--accent-color); }
-
+p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    font-weight: 300; /* Mais leve para elegância */
+}
 /* Fundos das Seções */
 .section-bg-white { background-color: var(--white-bg); }
 .section-bg-light { background-color: var(--light-bg); }
@@ -84,10 +91,28 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
 }
 
 .brand-area { display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 800; color: #fff; }
-.logo-icon {
-    background: var(--primary-color); width: 40px; height: 40px;
-    display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #fff;
+.logo { 
+    display: flex; 
+    align-items: center; 
+}
+.custom-logo {
+    max-width: 90px; /* Define a largura do logo no menu */
+    height: auto;
+    border-radius: 8px; /* Cantos arredondados para a imagem quadrada ficar elegante */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra suave para destacar no fundo preto */
+    transition: var(--transition);
+}
+
+.logo:hover .custom-logo {
+    transform: scale(1.05); /* Efeito de zoom suave ao passar o mouse */
+}
+
+/* Ajuste para o Footer */
+.custom-logo-footer {
+    max-width: 80px; 
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9; /* Deixa levemente transparente no rodapé */
 }
 
 /* Botão Hamburguer Animado */
@@ -193,6 +218,84 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
     padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);
     transition: var(--transition);
 }
+
+/* Estilização da Seção Frota */
+.grid-frota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.veiculo-card {
+    background: var(--white-bg);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.veiculo-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.veiculo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.veiculo-card:hover .veiculo-img img {
+    transform: scale(1.1);
+}
+
+.veiculo-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.veiculo-info {
+    padding: 30px;
+}
+
+.veiculo-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--dark-bg);
+}
+
+.veiculo-specs {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 20px;
+}
+
+.veiculo-specs li {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.veiculo-specs i {
+    color: var(--accent-color);
+}
+
+
 .method-card:hover { border-color: var(--accent-color); transform: translateX(10px); }
 .method-card i { font-size: 2rem; }
 .method-card h5 { color: #fff; font-size: 1.1rem; }
@@ -224,13 +327,21 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
 ========================================= */
 @media (max-width: 992px) {
     .main-content { margin-left: 0; }
-    
+    .custom-logo {
+        max-width: 55px; /* Logo um pouco menor no cabeçalho do celular */
+    }
+    .custom-logo-footer {
+        max-width: 70px; /* Logo um pouco menor no cabeçalho do celular */
+    }
     /* Header Topo Fixo */
     .side-header {
         width: 100%; height: var(--header-mobile-height); flex-direction: row; align-items: center; justify-content: space-between;
         padding: 0 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    
+    .section-title h2 {
+        font-size: 2.2rem; /* Títulos maiores e mais impactantes no mobile */
+        padding: 0 10px;
+    }
     .brand-area { width: 100%; z-index: 1002; position: relative; margin-top: 10px;}
     .mobile-menu-btn { display: flex; }
 
@@ -259,7 +370,10 @@ h1, h2, h3, h4, h5 { font-weight: 700; line-height: 1.2; }
     .nav-menu.active .sidebar-footer { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
 
     /* Ajustes Gerais Mobile */
-    .hero h1 { font-size: 3rem; }
+    .hero h1 {
+        font-size: 2.8rem;
+        line-height: 1.1;
+    }
     .contato-wrapper { grid-template-columns: 1fr; }
     .footer-content { flex-direction: column; gap: 15px; }
 
