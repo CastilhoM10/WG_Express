@@ -502,7 +502,15 @@ p {
 .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
+.btn-accent2 {
+    background-color: #25D366; /* Verde WhatsApp */
+    border-color: #25D366;
+    color: white;
+}
 
+.btn-accent2:hover {
+    background-color: #128C7E; /* Verde mais escuro no hover */
+}
 /* =========================================
    MOBILE RESPONSIVO V4.0 (A Mágica)
 ========================================= */

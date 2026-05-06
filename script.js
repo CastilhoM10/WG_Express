@@ -192,3 +192,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // 1. Pega os valores dos campos
+    const nome = document.getElementById('nome').value;
+    const cidade = document.getElementById('cidade').value;
+    const mensagem = document.getElementById('mensagem').value;
+    
+    // 2. Coloque aqui o número de WhatsApp dele (DDD + Número)
+    // Exemplo: 5519999999999
+    const numeroWhats = "5519993780528"; 
+
+    // 3. Monta a mensagem formatada
+    const texto = `*NOVA SOLICITAÇÃO DE FRETE* %0A%0A` +
+                  `*Nome:* ${nome} %0A` +
+                  `*Trajeto:* ${cidade} %0A` +
+                  `*Detalhes:* ${mensagem}`;
+
+    // 4. Cria o link final
+    const url = `https://api.whatsapp.com/send?phone=${numeroWhats}&text=${texto}`;
+
+    // 5. Abre em uma nova aba
+    window.open(url, '_blank');
+});
