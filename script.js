@@ -154,3 +154,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Lógica de Troca de Abas
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove ativo de todos os botões e conteúdos
+            tabButtons.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Fecha todas as caixas 3D abertas ao trocar de aba
+            document.querySelectorAll('.caixa-3d-wrapper').forEach(cx => cx.classList.remove('aberta'));
+
+            // Adiciona ativo ao botão clicado e à aba correspondente
+            btn.classList.add('active');
+            const target = btn.getAttribute('data-target');
+            document.getElementById(target).classList.add('active');
+        });
+    });
+
+    // 2. Lógica das Caixas 3D (Unboxing)
+    // Usamos delegação de evento para funcionar mesmo após a troca de abas
+    document.addEventListener('click', (e) => {
+        const wrapper = e.target.closest('.caixa-3d-wrapper');
+        if (wrapper) {
+            // Fecha outras caixas na mesma aba
+            const currentTab = wrapper.closest('.tab-content');
+            currentTab.querySelectorAll('.caixa-3d-wrapper').forEach(c => {
+                if(c !== wrapper) c.classList.remove('aberta');
+            });
+            
+            wrapper.classList.toggle('aberta');
+        }
+    });
+});

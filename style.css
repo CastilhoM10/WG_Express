@@ -295,6 +295,186 @@ p {
     color: var(--accent-color);
 }
 
+/* =========================================
+   CAIXAS 3D UNBOXING (Efeito de Abrir e Foto Subir)
+========================================= */
+.grid-caixas-3d {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* O wrapper cria o "Mundo 3D" */
+.caixa-3d-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px; /* Altura total para a foto subir */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinha a caixa no fundo */
+    perspective: 1200px; /* Profundidade 3D */
+    cursor: pointer;
+}
+
+/* Estrutura base da caixa */
+.caixa-estrutura {
+    position: relative;
+    width: 85%;
+    height: 180px; /* Altura da caixa fechada */
+    transform-style: preserve-3d;
+}
+
+/* Parede do Fundo (Escura, dando ideia de interior) */
+.caixa-fundo {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-color: #12141a;
+    border-radius: 8px 8px 16px 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* A Foto que fica dentro da caixa */
+.caixa-foto {
+    position: absolute;
+    width: 90%; height: 160px;
+    left: 5%; bottom: 10px;
+    background: #fff;
+    border-radius: 12px;
+    z-index: 2; /* Fica entre o fundo e a frente */
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); /* Efeito elástico (salto) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.caixa-foto img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.badge-entregue {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: #25d366; /* Verde sucesso */
+    color: #fff;
+    width: 35px; height: 35px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 10px rgba(37, 211, 102, 0.4);
+}
+
+/* Frente da Caixa */
+.caixa-frente {
+    position: absolute;
+    width: 100%; height: 85%; /* Um pouco menor que o fundo para criar profundidade */
+    bottom: 0; left: 0;
+    background-color: var(--dark-surface); /* Preto elegante */
+    border-radius: 4px 4px 16px 16px;
+    z-index: 3;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.caixa-frente h4 { color: #fff; font-size: 1.5rem; margin-top: 10px; }
+.caixa-frente i { font-size: 2.5rem; }
+.caixa-frente span {
+    font-size: 0.85rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 5px;
+}
+
+/* A Tampa que vai abrir em 3D */
+.caixa-tampa {
+    position: absolute;
+    width: 100%; height: 60%; /* Cobre a caixa por cima */
+    bottom: 85%; left: 0; /* Grudada no topo da "caixa-frente" */
+    background-color: #2a2e38; /* Cinza um pouco mais claro que a frente */
+    border-radius: 8px 8px 4px 4px;
+    transform-origin: bottom; /* O eixo de rotação é a base da tampa */
+    transition: transform 0.6s ease-in-out;
+    z-index: 4; /* Fica acima de tudo quando fechada */
+    display: flex; justify-content: center; align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+
+/* Fita adesiva vermelha simulando o lacre da caixa */
+.fita-lacre {
+    width: 30%; height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* =========================================
+   SISTEMA DE ABAS (TABS)
+========================================= */
+.tab-control {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background: #f4f4f4;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.tab-btn i {
+    font-size: 1.1rem;
+}
+
+.tab-btn.active {
+    background: var(--dark-bg);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.tab-btn:hover:not(.active) {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+/* Lógica de exibição das abas */
+.tab-content {
+    display: none; /* Esconde por padrão */
+    animation: fadeInTab 0.5s ease forwards;
+}
+
+.tab-content.active {
+    display: block; /* Mostra a aba ativa */
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* =========================================
+   MÁGICA DA ANIMAÇÃO (Quando a classe .aberta é ativada)
+========================================= */
+
+/* 1. A tampa deita para a frente como se estivesse abrindo */
+.caixa-3d-wrapper.aberta .caixa-tampa {
+    transform: rotateX(150deg); 
+    background-color: #1a1d24; /* Escurece a tampa porque estamos vendo o lado de dentro dela */
+}
+
+/* 2. A foto salta para fora da caixa */
+.caixa-3d-wrapper.aberta .caixa-foto {
+    transform: translateY(-130px) scale(1.15); /* Sobe e aumenta de tamanho levemente */
+    z-index: 5; /* Pula para frente da tampa */
+}
 
 .method-card:hover { border-color: var(--accent-color); transform: translateX(10px); }
 .method-card i { font-size: 2rem; }
@@ -321,6 +501,7 @@ p {
 ========================================= */
 .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
 
 /* =========================================
    MOBILE RESPONSIVO V4.0 (A Mágica)
@@ -389,6 +570,16 @@ p {
     
     /* Quando visível: vai pro lugar original */
     .card-anim.visible { opacity: 1; transform: translateX(0) !important; }
+    .tab-control {
+        flex-direction: row;
+        width: 100%;
+    }
+    .tab-btn {
+        flex: 1;
+        font-size: 0.9rem;
+        padding: 10px 15px;
+        justify-content: center;
+    }
 }
 
 /* Fallback Desktop para .card-anim */
